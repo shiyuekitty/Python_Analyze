@@ -4,7 +4,6 @@ import json
 
 def get_translate_date(word=None):
     url = 'http://fanyi.youdao.com/translate'
-    # url = 'http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule'
     Form_data = {'i': word,
                  'from': 'AUTO',
                  'to': 'AUTO',
