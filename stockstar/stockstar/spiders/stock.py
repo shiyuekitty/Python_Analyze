@@ -20,8 +20,8 @@ class StockSpider(scrapy.Spider):
             item_loader.add_css("chg_ratio", "td:nth-child(4) span::text")
             item_loader.add_css("chg_amt", "td:nth-child(5) span::text")
             item_loader.add_css("chg_ratio_5min", "td:nth-child(6) span::text")
-            item_loader.add_css("volumn", "td:nth-child(7) span::text")
-            item_loader.add_css("turn_over", "td:nth-child(8) span::text")
+            item_loader.add_css("volumn", "td:nth-child(7)::text")
+            item_loader.add_css("turn_over", "td:nth-child(8)::text")
             stock_item = item_loader.load_item()
             yield stock_item
         if item_nodes:
