@@ -12,7 +12,7 @@ def get_play_list(start_url, cid, quality):
     chksum = hashlib.md5(bytes(params + sec, 'utf8')).hexdigest()
     url_api = 'https://interface.bilibili.com/v2/playurl?%s&sign=%s' % (params, chksum)
     headers = {
-        'Referer': 'https://www.bilibili.com/video/av74506347',     # 注意加上referer
+        'Referer': 'https://www.bilibili.com/video/av50387865',     # 注意加上referer
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
     }
     # print(url_api)
@@ -107,7 +107,7 @@ def down_video(video_list, title, start_url, page):
             ('Accept-Language', 'en-US,en;q=0.5'),
             ('Accept-Encoding', 'gzip, deflate, br'),
             ('Range', 'bytes=0-'),  # Range 的值要为 bytes=0- 才能下载完整视频
-            ('Referer', 'https://www.bilibili.com/video/av74506347'),  # 注意修改referer,必须要加的!
+            ('Referer', 'https://www.bilibili.com/video/av50387865'),  # 注意修改referer,必须要加的!
             ('Origin', 'https://www.bilibili.com'),
             ('Connection', 'keep-alive'),
         ]

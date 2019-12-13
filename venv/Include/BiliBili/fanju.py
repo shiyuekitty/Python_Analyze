@@ -120,7 +120,7 @@ def down_video(video_list, title, start_url, page):
             ('Accept-Language', 'en-US,en;q=0.5'),
             ('Accept-Encoding', 'gzip, deflate, br'),
             ('Range', 'bytes=0-'),  # Range 的值要为 bytes=0- 才能下载完整视频
-            ('Referer', 'https://www.bilibili.com/bangumi/play/ep284416'),
+            ('Referer', 'https://www.bilibili.com/bangumi/play/ep292376?spm_id_from=333.851.b_62696c695f7265706f72745f67756f636875616e67.3'),
             # 注意修改referer,必须要加的!
             ('Origin', 'https://www.bilibili.com'),
             ('Connection', 'keep-alive'),

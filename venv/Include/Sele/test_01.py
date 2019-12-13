@@ -1,9 +1,3 @@
-# C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe
-import requests
-import urllib
-import time
-import random
-from selenium.webdriver.common.by import By
 import requests, urllib.request, time, random
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -13,22 +7,21 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def get_url(url):
     time.sleep(2)
-    return (requests.get(url))
-
+    return requests.get(url)
 
 if __name__ == '__main__':
-    driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chromedriver")
-    # driver = webdriver.Firefox()
-    url = 'https://m.dujia.qunar.com/depCities.qunar'
-    strhtml = get_url(url)
-    dep_dict = strhtml.json()
-    a = []
+    driver=webdriver.Chrome("C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe")
+    url='https://m.dujia.qunar.com/depCities.qunar'
+    # url='https://combine.dujia.qunar.com/get_arr_dep_city?&depCity=&arrCity=&version=2&_=1576036727266'
+    str_html=get_url(url)
+    dep_dict=str_html.json()
+    a=[]
     for dep_item in dep_dict['data']:
         for dep in dep_dict['data'][dep_item]:
             a.append(dep)
     for dep_1 in a[1:]:
         strhtml = get_url(
-            'https://m.dujia.qunar.com/golfz/sight/arriveRecommend?dep={}&exclude=&extensionImg=255,175'.format(
+            'https://m.dujia.qunar.com/golfz/sight/arriveRecommend?dep={}&modules=domestic%2Cabroad&_=1575986508137'.format(
                 urllib.request.quote(dep_1)))
         arrive_dict = strhtml.json()
         for arr_item in arrive_dict['data']:
@@ -63,5 +56,5 @@ if __name__ == '__main__':
                                     break
                         else:
                             break
-    driver.close()
-    exit()
+        driver.close()
+        exit()
